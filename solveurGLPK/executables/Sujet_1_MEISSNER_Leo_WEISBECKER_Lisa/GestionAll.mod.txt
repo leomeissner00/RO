@@ -1,0 +1,22 @@
+# Autres donnes possibles pour 
+# le problme de fabrication 
+# de ciment
+
+data;
+
+set PERSONNES := 
+BERTRAND
+GERTRUDE
+PATRICK;
+
+set TACHES :=
+ROUE
+CARROSERIE
+MOTEUR;
+
+param matricecout: ROUE CARROSERIE MOTEUR :=
+BERTRAND 10 1 10
+GERTRUDE 15 10 1
+PATRICK 1 15 15;
+
+end;

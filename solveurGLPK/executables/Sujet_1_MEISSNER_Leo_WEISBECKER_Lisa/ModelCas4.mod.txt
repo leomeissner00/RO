@@ -1,0 +1,48 @@
+#  GLPK model file created by SUN for RO teaching
+
+
+###############################  Model ###############################
+
+
+###############################  Sets  ###############################
+
+set BATIMENTS; 
+
+################### Variables ###################
+
+var decision{i in BATIMENTS, j in BATIMENTS}, binary;
+var decision2{i in BATIMENTS}, integer, >=1;
+
+
+###################  Constants: Data to load   #########################
+
+param distance{i in BATIMENTS, j in BATIMENTS}; 
+
+################### Constraints ###################
+
+
+s.t. RespectAutoVisite{i in BATIMENTS}:
+  decision[i,i] =  0;
+
+s.t. RespectLigne{j in BATIMENTS}:
+  sum{i in BATIMENTS} decision[i,j] =  1;
+
+s.t. RespectColonne{i in BATIMENTS}:
+  sum{j in BATIMENTS} decision[i,j] =  1;
+
+s.t. RespectSousBoucle{i in BATIMENTS : i <> 'ALPHA'}:
+  decision2[i] >=2;
+
+s.t. RespectSousBoucle2{i in BATIMENTS, j in BATIMENTS : i <> 'ALPHA' and j <> 'ALPHA'}:
+  decision2[i]-decision2[j] + 1 <= (card(BATIMENTS)-1)*(1-decision[i,j]);
+
+
+  
+
+###### Objective ######
+
+minimize CoutTotal: 
+		sum{i in BATIMENTS, j in BATIMENTS} decision[i,j]*distance[i,j];
+
+end;
+

@@ -1,0 +1,42 @@
+#  GLPK model file created by SUN for RO teaching
+
+
+###############################  Model ###############################
+
+
+###############################  Sets  ###############################
+
+set DEMANDES; 
+
+set MAGASINS;	
+
+set PRODUITS;
+
+################### Variables ###################
+
+var decision{i in MAGASINS, j in PRODUITS, k in DEMANDES}, integer, >=0; 
+
+###################  Constants: Data to load   #########################
+
+param demandesProduits{i in DEMANDES, j in PRODUITS}; 
+
+param stocksProduits{i in MAGASINS, j in PRODUITS}; 
+
+param coutsProduits{i in MAGASINS, j in PRODUITS};
+
+################### Constraints ###################
+
+
+s.t. RespectStocks{i in MAGASINS, j in PRODUITS}:
+  stocksProduits[i,j] >= sum{k in DEMANDES} decision[i,j,k];
+
+s.t. RespectDemandes{k in DEMANDES, j in PRODUITS}:
+  sum{i in MAGASINS} decision[i,j,k] = demandesProduits[k,j];
+
+###### Objective ######
+
+minimize CoutTotal: 
+		sum{i in MAGASINS, j in PRODUITS, k in DEMANDES}  coutsProduits[i,j]* decision[i,j,k]; 
+
+end;
+

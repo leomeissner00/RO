@@ -1,0 +1,54 @@
+#  GLPK model file created by SUN for RO teaching
+
+
+###############################  Model ###############################
+
+
+###############################  Sets  ###############################
+
+set DEMANDES; 
+
+set MAGASINS;	
+
+set PRODUITS;
+
+################### Variables ###################
+
+var decision{i in MAGASINS, j in PRODUITS, k in DEMANDES}, integer, >=0; 
+var impact{i in DEMANDES, j in MAGASINS}, binary;
+
+
+###################  Constants: Data to load   #########################
+
+param demandesProduits{i in DEMANDES, j in PRODUITS}; 
+
+param stocksProduits{i in MAGASINS, j in PRODUITS}; 
+
+param coutsFixes{i in DEMANDES, j in MAGASINS};
+
+param coutsVariables{i in DEMANDES, j in MAGASINS};
+
+param bigM, integer;
+
+################### Constraints ###################
+
+
+s.t. RespectStocks{i in MAGASINS, j in PRODUITS}:
+  stocksProduits[i,j] >=  sum{k in DEMANDES} decision[i,j,k]; 
+
+s.t. RespectDemandes{k in DEMANDES, j in PRODUITS}:
+  sum{i in MAGASINS} decision[i,j,k] = demandesProduits[k,j];
+
+s.t. RespectImpact1 {k in DEMANDES, i in MAGASINS}:
+  sum{j in PRODUITS} decision[i,j,k] >= impact[k,i];
+
+s.t. RespectImpact2 {k in DEMANDES, i in MAGASINS}:
+  sum{j in PRODUITS} decision[i,j,k] <= impact[k,i]*bigM;
+
+###### Objective ######
+
+minimize CoutTotal: 
+		sum{i in MAGASINS, j in PRODUITS, k in DEMANDES} decision[i,j,k]*coutsVariables[k,i] + sum{i in MAGASINS, k in DEMANDES} impact[k,i]*coutsFixes[k,i] ; 
+
+end;
+

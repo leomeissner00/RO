@@ -1,0 +1,203 @@
+Problem:    ModelCas4
+Rows:       49
+Columns:    41 (41 integer, 36 binary)
+Non-zeros:  178
+Status:     INTEGER OPTIMAL
+Objective:  CoutTotal = 22 (MINimum)
+
+   No.   Row name        Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 RespectAutoVisite[ALPHA]
+                                   0            -0             = 
+     2 RespectAutoVisite[C1]
+                                   0            -0             = 
+     3 RespectAutoVisite[C2]
+                                   0            -0             = 
+     4 RespectAutoVisite[C3]
+                                   0            -0             = 
+     5 RespectAutoVisite[C4]
+                                   0            -0             = 
+     6 RespectAutoVisite[C5]
+                                   0            -0             = 
+     7 RespectLigne[ALPHA]
+                                   1             1             = 
+     8 RespectLigne[C1]
+                                   1             1             = 
+     9 RespectLigne[C2]
+                                   1             1             = 
+    10 RespectLigne[C3]
+                                   1             1             = 
+    11 RespectLigne[C4]
+                                   1             1             = 
+    12 RespectLigne[C5]
+                                   1             1             = 
+    13 RespectColonne[ALPHA]
+                                   1             1             = 
+    14 RespectColonne[C1]
+                                   1             1             = 
+    15 RespectColonne[C2]
+                                   1             1             = 
+    16 RespectColonne[C3]
+                                   1             1             = 
+    17 RespectColonne[C4]
+                                   1             1             = 
+    18 RespectColonne[C5]
+                                   1             1             = 
+    19 RespectSousBoucle[C1]
+                                   6             2               
+    20 RespectSousBoucle[C2]
+                                   2             2               
+    21 RespectSousBoucle[C3]
+                                   5             2               
+    22 RespectSousBoucle[C4]
+                                   4             2               
+    23 RespectSousBoucle[C5]
+                                   3             2               
+    24 RespectSousBoucle2[C1,C1]
+                                   0                           4 
+    25 RespectSousBoucle2[C1,C2]
+                                   4                           4 
+    26 RespectSousBoucle2[C1,C3]
+                                   1                           4 
+    27 RespectSousBoucle2[C1,C4]
+                                   2                           4 
+    28 RespectSousBoucle2[C1,C5]
+                                   3                           4 
+    29 RespectSousBoucle2[C2,C1]
+                                  -4                           4 
+    30 RespectSousBoucle2[C2,C2]
+                                   0                           4 
+    31 RespectSousBoucle2[C2,C3]
+                                  -3                           4 
+    32 RespectSousBoucle2[C2,C4]
+                                  -2                           4 
+    33 RespectSousBoucle2[C2,C5]
+                                   4                           4 
+    34 RespectSousBoucle2[C3,C1]
+                                   4                           4 
+    35 RespectSousBoucle2[C3,C2]
+                                   3                           4 
+    36 RespectSousBoucle2[C3,C3]
+                                   0                           4 
+    37 RespectSousBoucle2[C3,C4]
+                                   1                           4 
+    38 RespectSousBoucle2[C3,C5]
+                                   2                           4 
+    39 RespectSousBoucle2[C4,C1]
+                                  -2                           4 
+    40 RespectSousBoucle2[C4,C2]
+                                   2                           4 
+    41 RespectSousBoucle2[C4,C3]
+                                   4                           4 
+    42 RespectSousBoucle2[C4,C4]
+                                   0                           4 
+    43 RespectSousBoucle2[C4,C5]
+                                   1                           4 
+    44 RespectSousBoucle2[C5,C1]
+                                  -3                           4 
+    45 RespectSousBoucle2[C5,C2]
+                                   1                           4 
+    46 RespectSousBoucle2[C5,C3]
+                                  -2                           4 
+    47 RespectSousBoucle2[C5,C4]
+                                   4                           4 
+    48 RespectSousBoucle2[C5,C5]
+                                   0                           4 
+    49 CoutTotal                  22                             
+
+   No. Column name       Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 decision[ALPHA,ALPHA]
+                    *              0             0             1 
+     2 decision[C1,C1]
+                    *              0             0             1 
+     3 decision[C2,C2]
+                    *              0             0             1 
+     4 decision[C3,C3]
+                    *              0             0             1 
+     5 decision[C4,C4]
+                    *              0             0             1 
+     6 decision[C5,C5]
+                    *              0             0             1 
+     7 decision[C1,ALPHA]
+                    *              1             0             1 
+     8 decision[C2,ALPHA]
+                    *              0             0             1 
+     9 decision[C3,ALPHA]
+                    *              0             0             1 
+    10 decision[C4,ALPHA]
+                    *              0             0             1 
+    11 decision[C5,ALPHA]
+                    *              0             0             1 
+    12 decision[ALPHA,C1]
+                    *              0             0             1 
+    13 decision[C2,C1]
+                    *              0             0             1 
+    14 decision[C3,C1]
+                    *              1             0             1 
+    15 decision[C4,C1]
+                    *              0             0             1 
+    16 decision[C5,C1]
+                    *              0             0             1 
+    17 decision[ALPHA,C2]
+                    *              1             0             1 
+    18 decision[C1,C2]
+                    *              0             0             1 
+    19 decision[C3,C2]
+                    *              0             0             1 
+    20 decision[C4,C2]
+                    *              0             0             1 
+    21 decision[C5,C2]
+                    *              0             0             1 
+    22 decision[ALPHA,C3]
+                    *              0             0             1 
+    23 decision[C1,C3]
+                    *              0             0             1 
+    24 decision[C2,C3]
+                    *              0             0             1 
+    25 decision[C4,C3]
+                    *              1             0             1 
+    26 decision[C5,C3]
+                    *              0             0             1 
+    27 decision[ALPHA,C4]
+                    *              0             0             1 
+    28 decision[C1,C4]
+                    *              0             0             1 
+    29 decision[C2,C4]
+                    *              0             0             1 
+    30 decision[C3,C4]
+                    *              0             0             1 
+    31 decision[C5,C4]
+                    *              1             0             1 
+    32 decision[ALPHA,C5]
+                    *              0             0             1 
+    33 decision[C1,C5]
+                    *              0             0             1 
+    34 decision[C2,C5]
+                    *              1             0             1 
+    35 decision[C3,C5]
+                    *              0             0             1 
+    36 decision[C4,C5]
+                    *              0             0             1 
+    37 decision2[C1]
+                    *              6             1               
+    38 decision2[C2]
+                    *              2             1               
+    39 decision2[C3]
+                    *              5             1               
+    40 decision2[C4]
+                    *              4             1               
+    41 decision2[C5]
+                    *              3             1               
+
+Integer feasibility conditions:
+
+KKT.PE: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.PB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+End of output

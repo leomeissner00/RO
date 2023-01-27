@@ -1,0 +1,15 @@
+\* Problem: Fabrication de voiture *\
+
+Maximize
+ Benefice: + 10000 Q1 + 9000 Q2 
+
+Subject To
+ CapaciteduTravail: + 0.06 Q1 + 0.05 Q2 <= 60
+ CapacitedeSurface: + 10 Q1 + 20 Q2 <= 15000
+ CapaciteAssemblage: + Q1 <= 800
+
+Integers
+Q1
+Q2
+
+End
